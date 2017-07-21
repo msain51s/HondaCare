@@ -211,15 +211,31 @@ public class Util {
 
     /*view animation*/
 
-    public static  void setAnimation(Context context, View view, int type){
+    public static  void setAnimation(Context context, final View view, int type){
         Animation animation_type=null;
 
         if(type==AnimationType.SLIDE_UP) {
             animation_type = AnimationUtils.loadAnimation(context,
                     R.anim.slide_up);
+            animation_type.setAnimationListener(new Animation.AnimationListener() {
+                @Override
+                public void onAnimationStart(Animation animation) {
+
+                }
+
+                @Override
+                public void onAnimationEnd(Animation animation) {
+                    view.setVisibility(View.GONE);
+                    return;
+                }
+
+                @Override
+                public void onAnimationRepeat(Animation animation) {
+
+                }
+            });
             view.startAnimation(animation_type);
-            view.setVisibility(View.GONE);
-            return;
+
         }
         else if(type== AnimationType.SLIDE_DOWN){
             animation_type = AnimationUtils.loadAnimation(context,

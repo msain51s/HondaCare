@@ -34,7 +34,7 @@ import java.util.ArrayList;
 public class DealerLocationActivity extends BaseActivity implements DealerListAdapter.OnItemClickListener{
 
     String activityName;
-    TextView select_dealer_text,select_state_text,select_city_text,bottom_line_text;
+    TextView select_dealer_text,select_state_text,select_city_text;
     ImageView arrow_icon;
     View stateAndCityLayout;
     RecyclerView dealer_recyclerview;
@@ -63,7 +63,6 @@ public class DealerLocationActivity extends BaseActivity implements DealerListAd
         select_dealer_text=(TextView)findViewById(R.id.select_dealer_textview);
         select_state_text=(TextView)findViewById(R.id.select_state_textview);
         select_city_text=(TextView)findViewById(R.id.select_city_textview);
-        bottom_line_text= (TextView) findViewById(R.id.bottom_line_text);
         arrow_icon= (ImageView) findViewById(R.id.arrow_icon);
         stateAndCityLayout=findViewById(R.id.state_and_city_layout);
         dealer_recyclerview= (RecyclerView) findViewById(R.id.dealer_recyclerview);
@@ -133,16 +132,17 @@ public class DealerLocationActivity extends BaseActivity implements DealerListAd
         GradientDrawable drawable= (GradientDrawable) view.getBackground();
 
         if(isStateAndCityLayoutShowing) {
-            stateAndCityLayout.setVisibility(View.GONE);
-       //     Util.setAnimation(this,stateAndCityLayout, AnimationType.SLIDE_UP);
+      //      stateAndCityLayout.setVisibility(View.GONE);
+     //       Util.setAnimation(this,stateAndCityLayout, AnimationType.SLIDE_UP);
+            Util.collapse(stateAndCityLayout);
             isStateAndCityLayoutShowing=false;
-            bottom_line_text.setVisibility(View.GONE);
+     //       bottom_line_text.setVisibility(View.GONE);
         }
         else {
-            stateAndCityLayout.setVisibility(View.VISIBLE);
+        //    stateAndCityLayout.setVisibility(View.VISIBLE);
         //    Util.setAnimation(this,stateAndCityLayout, AnimationType.SLIDE_DOWN);
+            Util.expand(stateAndCityLayout);
             isStateAndCityLayoutShowing=true;
-            bottom_line_text.setVisibility(View.VISIBLE);
         }
     }
 

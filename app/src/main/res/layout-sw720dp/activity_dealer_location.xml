@@ -5,13 +5,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_home"
+    android:padding="5dp"
     tools:context="com.intellinet.hondatwowheeler.activity.DealerLocationActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <android.support.v7.widget.CardView
+        android:id="@+id/header_card_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Check Click on Activity"
-        android:id="@+id/checkText"
-        android:layout_centerInParent="true" />
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardElevation="2dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp">
 
+        <!--SELECT HEADER LAYOUT-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp"
+            android:background="@drawable/select_dealer_bg"
+            android:onClick="performHideAndShowSelectDealerLayout">
+            <TextView
+                android:id="@+id/select_dealer_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Dealer"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:layout_centerVertical="true"
+                />
+            <ImageView
+                android:id="@+id/arrow_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/arrow_down1"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"/>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+    <!--STATE AND CITY LAYOUT-->
+    <android.support.v7.widget.CardView
+        android:id="@+id/state_and_city_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardElevation="2dp"
+        android:clipToPadding="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/header_card_layout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/white_bg_drawable"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:padding="12dp"
+                android:background="@drawable/drop_down_bg"
+                android:onClick="performStateClick">
+                <TextView
+                    android:id="@+id/select_state_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="State"
+                    android:textSize="22sp"
+                    android:textColor="@color/black"
+                    android:layout_centerVertical="true"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/arrow_down1"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
+                android:padding="12dp"
+                android:background="@drawable/drop_down_bg"
+                android:onClick="performCityClick">
+                <TextView
+                    android:id="@+id/select_city_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="City"
+                    android:textSize="22sp"
+                    android:textColor="@color/black"
+                    android:layout_centerVertical="true"
+                    />
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/arrow_down1"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/dealer_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_below="@+id/state_and_city_layout"/>
 </RelativeLayout>
