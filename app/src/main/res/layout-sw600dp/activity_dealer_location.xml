@@ -15,9 +15,9 @@
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@android:color/transparent"
         app:cardElevation="2dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="5dp">
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp">
 
         <!--SELECT HEADER LAYOUT-->
         <RelativeLayout
@@ -55,18 +55,19 @@
         app:cardBackgroundColor="@android:color/transparent"
         app:cardElevation="2dp"
         android:clipToPadding="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_below="@+id/header_card_layout">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/white_bg_drawable"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="12dp"
+                android:layout_margin="15dp"
                 android:padding="10dp"
                 android:background="@drawable/drop_down_bg"
                 android:onClick="performStateClick">
@@ -90,9 +91,9 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="15dp"
                 android:padding="10dp"
                 android:background="@drawable/drop_down_bg"
                 android:onClick="performCityClick">
@@ -119,9 +120,9 @@
         android:id="@+id/dealer_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
         android:layout_below="@+id/state_and_city_layout"/>
 </RelativeLayout>
