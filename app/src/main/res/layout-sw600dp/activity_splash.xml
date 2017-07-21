@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/splash_background"
+    tools:context="com.intellinet.hondatwowheeler.activity.SplashActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stripLeft"
+        android:src="@drawable/splash_left_strip"
+        android:layout_alignParentBottom="true"/>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/triangle_left_margin"
+        android:background="@drawable/splash_triangle"
+        android:layout_alignParentBottom="true" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/splashLogo"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/center_logo_left_margin"
+            android:src="@drawable/splash_center_logo" />
+
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stripRight"
+        android:layout_marginRight="@dimen/rs_r_margin"
+        android:src="@drawable/splash_right_strip"
+        android:layout_above="@+id/stripLeft"
+        android:layout_alignRight="@+id/relativeLayout"
+        android:layout_alignEnd="@+id/relativeLayout" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stripSmallTop"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/rsmall_right_margin"
+        android:src="@drawable/splash_small_top_strip"
+        android:layout_below="@+id/stripRight" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stripBottom"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/bottom_left_margin"
+        android:src="@drawable/splash_bottom_strip" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stripBottomMiddle"
+        android:src="@drawable/splash_bottom_middle_strip"
+        android:layout_alignTop="@+id/stripBottomSmall"
+        android:layout_alignRight="@+id/stripSmallTop"
+        android:layout_alignEnd="@+id/stripSmallTop" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stripBottomSmall"
+        android:layout_marginBottom="@dimen/bottom_small_margin"
+        android:layout_marginLeft="@dimen/bottom_small_left_margin"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/stripBottomMiddle"
+        android:src="@drawable/splash_small_bottom_strip" />
+
+
+</RelativeLayout>

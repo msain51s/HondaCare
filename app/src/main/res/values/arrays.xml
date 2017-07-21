@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="ld_activityScreenTitles">
+        <item>My Bikes</item>
+        <item>Notifications</item>
+        <item>Dealer Location</item>
+        <item>Feedback</item>
+        <item>Service Booking</item>
+        <item>Settings</item>
+    </string-array>
+
+    <array name="ld_activityScreenIcons">
+        <item>@drawable/micon_mybike</item>
+        <item>@drawable/micon_notification</item>
+        <item>@drawable/micon_dlocation</item>
+        <item>@drawable/micon_feedback</item>
+        <item>@drawable/micon_sbooking</item>
+        <item>@drawable/micon_settings</item>
+    </array>
+
+</resources>

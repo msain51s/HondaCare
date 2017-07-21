@@ -1,0 +1,102 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!--Splash Screen Margin-->
+    <dimen name="triangle_left_margin">35dp</dimen>
+
+    <dimen name="center_logo_left_margin">30dp</dimen>
+
+    <dimen name="rs_r_margin">17dp</dimen>
+    <dimen name="rsmall_right_margin">82dp</dimen>
+    <dimen name="bottom_left_margin">110dp</dimen>
+
+    <dimen name="bottom_small_margin">220dp</dimen>
+    <dimen name="bottom_small_left_margin">2dp</dimen>
+
+    <!--dimension for Register Screen-->
+
+    <dimen name="logo_top_margin">30dp</dimen>
+
+    <dimen name="layout_card_margin_top">50dp</dimen>
+    <dimen name="layout_card_margin_left">35dp</dimen>
+    <dimen name="layout_card_margin_right">35dp</dimen>
+    <dimen name="layout_card_margin_bottom">5dp</dimen>
+
+    <dimen name="layout_padding_top">50dp</dimen>
+    <dimen name="layout_padding_left">45dp</dimen>
+    <dimen name="layout_padding_right">45dp</dimen>
+    <dimen name="layout_padding_bottom">45dp</dimen>
+
+    <dimen name="mobile_icon_height">44dp</dimen>
+    <dimen name="mobile_icon_width">40dp</dimen>
+    <dimen name="mobile_icon_margin_top">2dp</dimen>
+
+    <dimen name="tick_icon_width">30dp</dimen>
+    <dimen name="tick_icon_height">30dp</dimen>
+    <dimen name="tick_margin_top">12dp</dimen>
+
+    <dimen name="edit_text_padding_left">10dp</dimen>
+    <dimen name="edit_text_padding_bottom">25dp</dimen>
+    <dimen name="edit_text_size">24sp</dimen>
+
+    <dimen name="button_card_margin_top">40dp</dimen>
+    <dimen name="button_card_margin_bottom">5dp</dimen>
+
+
+    <dimen name="button_layout_padding">15dp</dimen>
+    <dimen name="send_image_margin_left">50dp</dimen>
+
+    <!--dimension for User Detail Screen-->
+
+    <dimen name="user_logo_top_margin">30dp</dimen>
+
+    <dimen name="user_layout_card_margin_top">35dp</dimen>
+    <dimen name="user_layout_card_margin_left">35dp</dimen>
+    <dimen name="user_layout_card_margin_right">35dp</dimen>
+    <dimen name="user_layout_card_margin_bottom">5dp</dimen>
+
+    <dimen name="user_layout_padding_top">30dp</dimen>
+    <dimen name="user_layout_padding_left">45dp</dimen>
+    <dimen name="user_layout_padding_right">45dp</dimen>
+    <dimen name="user_layout_padding_bottom">30dp</dimen>
+
+    <dimen name="user_button_card_margin_top">35dp</dimen>
+    <dimen name="user_button_card_margin_left">45dp</dimen>
+    <dimen name="user_button_card_margin_right">45dp</dimen>
+
+    <dimen name="user_edit_text_padding_bottom">15dp</dimen>
+    <dimen name="user_edit_text_padding_left">15dp</dimen>
+    <dimen name="user_send_image_margin_left">50dp</dimen>
+
+
+    <!--dimension for OTP Verify Screen-->
+
+    <dimen name="otp_text_size">22sp</dimen>
+    <dimen name="regen_text_size">19sp</dimen>
+    <dimen name="pass_height">40dp</dimen>
+    <dimen name="pass_width">40dp</dimen>
+    <dimen name="pass_margin_top">7dp</dimen>
+    <dimen name="verify_img_margin_left">10dp</dimen>
+    <dimen name="verify_text_size">24dp</dimen>
+    <dimen name="verify_button_padding">15dp</dimen>
+
+    <dimen name="regen_margin_left">10dp</dimen>
+    <dimen name="regen_margin_top">10dp</dimen>
+
+    <dimen name="term_margin_top">12dp</dimen>
+    <dimen name="term_margin_bottom">12dp</dimen>
+    <dimen name="term_margin_left">10dp</dimen>
+    <dimen name="margin_otp_layout">10dp</dimen>
+
+
+
+    <!--dimension Home Screen-->
+
+    <dimen name="neg_margin">-160dp</dimen>
+    <dimen name="circle_height">570dp</dimen>
+    <dimen name="circle_width">570dp</dimen>
+    <dimen name="y_margin">18px</dimen>
+
+    <!--Add Bike-->
+    <dimen name="info_margin">10dp</dimen>
+
+</resources>

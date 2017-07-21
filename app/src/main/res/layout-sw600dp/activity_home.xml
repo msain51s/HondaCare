@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    android:background="@drawable/background_home"
+    tools:context="com.intellinet.hondatwowheeler.activity.HomeActivity">
+
+
+    <RelativeLayout
+        android:layout_width="@dimen/circle_width"
+        android:layout_height="@dimen/circle_height"
+        android:id="@+id/roundCircle"
+        android:layout_marginLeft="@dimen/neg_margin"
+        android:background="@drawable/round_home"
+        android:layout_centerVertical="true"/>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/neg_margin"
+        android:id="@+id/settingMenu">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:id="@+id/settingImage"
+            android:layout_height="90dp"
+            android:contentDescription="@string/menu_img"
+            android:src="@drawable/setting_menu"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textColor="#000000"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:layout_alignBottom="@+id/settingImage"
+            android:id="@+id/settingsText"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/settingImage"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:id="@+id/stView"
+        android:background="@drawable/st_ripple"
+        android:clickable="true"
+        android:layout_centerVertical="true"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/neg_margin"
+        android:id="@+id/sBookingMenu">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:id="@+id/sBookingImage"
+            android:layout_height="90dp"
+            android:contentDescription="@string/menu_img"
+            android:src="@drawable/s_booking_menu"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Service Booking"
+            android:textColor="#000000"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:id="@+id/sBookingText"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/sBookingImage"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:id="@+id/sbView"
+        android:background="@drawable/sb_ripple"
+        android:clickable="true"
+        android:layout_centerVertical="true"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/neg_margin"
+        android:id="@+id/feedbackMenu">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:id="@+id/feedbackImage"
+            android:layout_height="90dp"
+            android:contentDescription="@string/menu_img"
+            android:src="@drawable/feedback_menu"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Feedback"
+            android:textColor="#000000"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:id="@+id/feedbackText"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/feedbackImage"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:id="@+id/fbView"
+        android:background="@drawable/fb_ripple"
+        android:clickable="true"
+        android:layout_centerVertical="true"/>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/neg_margin"
+        android:id="@+id/dLocationMenu">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:id="@+id/dlImage"
+            android:layout_height="90dp"
+            android:contentDescription="@string/menu_img"
+            android:src="@drawable/d_location_menu"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dlTextLayout"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/dlImage"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dealer"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="19sp"
+                android:id="@+id/dText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textSize="19sp"
+                android:id="@+id/lText"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:id="@+id/dlView"
+        android:background="@drawable/dl_ripple"
+        android:clickable="true"
+        android:layout_centerVertical="true"/>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/neg_margin"
+        android:visibility="gone"
+        android:id="@+id/notificationMenu">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:id="@+id/notificationImage"
+            android:layout_height="90dp"
+            android:contentDescription="@string/menu_img"
+            android:src="@drawable/notification_menu"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Notifications"
+            android:textColor="#000000"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:id="@+id/notificationText"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/notificationImage"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:id="@+id/notificationView"
+        android:background="@drawable/notification_ripple"
+        android:clickable="true"
+        android:layout_centerVertical="true"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/neg_margin"
+        android:visibility="gone"
+        android:id="@+id/myBikeMenu">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:id="@+id/myBikeImage"
+            android:layout_height="90dp"
+            android:contentDescription="@string/menu_img"
+            android:src="@drawable/mybike_menu"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Bikes"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            android:id="@+id/myBikeText"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/myBikeImage"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:id="@+id/myBikeView"
+        android:background="@drawable/mybike_ripple"
+        android:clickable="true"
+        android:layout_centerVertical="true"/>
+
+
+    <TextView
+        android:text="Powered By : Intellinet Systems Pvt. Ltd."
+        android:background="#d90000"
+        android:textColor="#FFFFFF"
+        android:gravity="center"
+        android:textSize="19sp"
+        android:id="@+id/poweredByText"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"/>
+
+</RelativeLayout>

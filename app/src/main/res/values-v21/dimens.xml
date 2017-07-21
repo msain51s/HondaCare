@@ -1,0 +1,16 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!--Splash Screen Margin-->
+    <dimen name="triangle_left_margin">20dp</dimen>
+
+    <dimen name="center_logo_left_margin">30dp</dimen>
+
+    <dimen name="rs_r_margin">10dp</dimen>
+    <dimen name="rsmall_right_margin">48dp</dimen>
+    <dimen name="bottom_left_margin">70dp</dimen>
+
+    <dimen name="bottom_small_margin">142dp</dimen>
+    <dimen name="bottom_small_left_margin">1dp</dimen>
+
+
+</resources>

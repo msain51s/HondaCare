@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.intellinet.hondatwowheeler">
+
+    <application
+        android:name=".utility.Application"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".activity.SplashActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:name=".activity.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.UserDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.OTPVerifyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".activity.HomeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MyBikeActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.NotificationActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.DealerLocationActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.FeedbackActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.SBookingActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".activity.SettingsActivity"
+            android:launchMode="singleTask"></activity>
+        <activity
+            android:name=".activity.AddBikeActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+    </application>
+
+</manifest>

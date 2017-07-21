@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Honda Customer Care</string>
+
+    <string name="menu_img">Menu Image</string>
+    <string name="title_activity_demo">DemoActivity</string>
+</resources>

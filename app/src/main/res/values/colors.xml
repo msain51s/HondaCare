@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="uiColor">#d90000</color>
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#fff</color>
+    <color name="colorAccent">#448AFF</color>
+
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
+    <color name="colorBlack">#000</color>
+
+    <color name="light_grey">#D3D3D3</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+</resources>

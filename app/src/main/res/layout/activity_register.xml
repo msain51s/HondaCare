@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/reg_background"
+    android:focusableInTouchMode="true"
+    tools:context="com.intellinet.hondatwowheeler.activity.RegisterActivity">
+
+    <ScrollView
+        android:scrollbars="none"
+        android:fillViewport="true"
+        android:id="@+id/notificationScroll"
+        android:isScrollContainer="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/regLogo"
+        android:layout_marginTop="@dimen/logo_top_margin"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/splash_center_logo"/>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dip"
+        app:cardElevation="4dp"
+        android:id="@+id/cv"
+        android:layout_below="@+id/regLogo"
+        app:cardBackgroundColor="#0000"
+        android:layout_marginTop="@dimen/layout_card_margin_top"
+        android:layout_marginLeft="@dimen/layout_card_margin_left"
+        android:layout_marginRight="@dimen/layout_card_margin_right"
+        android:layout_marginBottom="@dimen/layout_card_margin_bottom">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/noEnterLayout"
+        android:background="@drawable/reg_enter_background"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/layout_padding_top"
+        android:paddingLeft="@dimen/layout_padding_left"
+        android:paddingRight="@dimen/layout_padding_right"
+        android:paddingBottom="@dimen/layout_padding_bottom">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/enterLayout">
+
+        <ImageView
+            android:layout_width="@dimen/mobile_icon_width"
+            android:layout_height="@dimen/mobile_icon_height"
+            android:layout_marginTop="@dimen/mobile_icon_margin_top"
+            android:src="@drawable/mobile_icon"
+            android:id="@+id/mobileIcon" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/mobileEditText"
+            android:hint="Enter Register Mobile No."
+            android:textSize="@dimen/edit_text_size"
+            android:paddingLeft="@dimen/edit_text_padding_left"
+            android:paddingBottom="@dimen/edit_text_padding_bottom"
+            android:inputType="number"
+            android:textColor="#ffffff"
+            android:maxLength="10"
+            android:layout_toRightOf="@+id/mobileIcon"
+            android:textColorHint="#66000000"
+            android:backgroundTint="#80ffffff"/>
+
+
+            <com.uniquestudio.library.CircleCheckBox
+                android:id="@+id/circle_check_box"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="8dp"
+                app:background_color="#0000"
+                android:visibility="invisible"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+
+       <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/button_card_margin_top">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/button_layout_padding"
+                android:elevation="4dp"
+                android:layout_marginBottom="@dimen/button_card_margin_bottom"
+                android:id="@+id/buttonLayout"
+                android:layout_gravity="center"
+                android:background="@drawable/send_button_drawable">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sendOtpButton"
+                android:text="Send OTP"
+                android:textSize="20sp"
+                android:layout_centerInParent="true"
+                android:textColor="#ffffff" />
+
+            </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/button_layout_padding"
+            android:elevation="4dp"
+            android:layout_marginBottom="@dimen/button_card_margin_bottom"
+            android:id="@+id/rotateLayout"
+            android:layout_centerInParent="true"
+            android:visibility="invisible"
+            android:background="@drawable/send_button_drawable">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/regenerate"
+                android:layout_centerInParent="true"
+                android:id="@+id/centerIcon" />
+
+        </RelativeLayout>
+       </RelativeLayout>
+    </LinearLayout>
+
+         </android.support.v7.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/colorLayout"
+        android:background="#1aba5d"
+        android:visibility="invisible" />
+
+</RelativeLayout>
