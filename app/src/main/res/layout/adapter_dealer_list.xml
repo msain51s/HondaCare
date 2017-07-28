@@ -7,12 +7,15 @@
     app:cardCornerRadius="5dp"
     app:cardBackgroundColor="@android:color/transparent"
     app:cardElevation="0dp"
-    android:layout_marginBottom="10dp">
+    android:layout_marginBottom="10dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    >
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@drawable/dealer_list_row_bg">
+    android:background="@drawable/dealer_list_row_bg"
+    >
 <RelativeLayout
     android:layout_width="0dp"
     android:layout_height="wrap_content"

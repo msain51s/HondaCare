@@ -32,5 +32,6 @@ dependencies {
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.uniquestudio:checkbox:1.0.10'
     compile 'com.yarolegovich:sliding-root-nav:1.0.2'
+    compile 'com.google.android.gms:play-services-maps:11.0.1'
     testCompile 'junit:junit:4.12'
 }

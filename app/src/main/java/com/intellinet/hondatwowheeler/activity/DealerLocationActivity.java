@@ -29,6 +29,7 @@ import com.intellinet.hondatwowheeler.model.DealerModel;
 import com.intellinet.hondatwowheeler.model.MyBike;
 import com.intellinet.hondatwowheeler.utility.Util;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class DealerLocationActivity extends BaseActivity implements DealerListAdapter.OnItemClickListener{
@@ -99,6 +100,8 @@ public class DealerLocationActivity extends BaseActivity implements DealerListAd
         model1.setAddress("Block A 10 Near Railway Road");
         model1.setDistance("02");
         model1.setDistanceUnit("KM");
+        model1.setContactNo("+91 (0)124-7712800");
+        model1.setEmailAddress("hondadealer@gmail.com");
         dealerList.add(model1);
 
         DealerModel model2 = new DealerModel();
@@ -106,6 +109,8 @@ public class DealerLocationActivity extends BaseActivity implements DealerListAd
         model2.setAddress("Shop No 101,102 Sohna Road");
         model2.setDistance("100");
         model2.setDistanceUnit("MTR");
+        model2.setContactNo("+91 (0)124-7712800");
+        model2.setEmailAddress("hondadealer@gmail.com");
         dealerList.add(model2);
 
         DealerModel model3 = new DealerModel();
@@ -113,6 +118,8 @@ public class DealerLocationActivity extends BaseActivity implements DealerListAd
         model3.setAddress("Block C 33 Near Railway Road");
         model3.setDistance("05");
         model3.setDistanceUnit("KM");
+        model3.setContactNo("+91 (0)124-7712800");
+        model3.setEmailAddress("hondadealer@gmail.com");
         dealerList.add(model3);
 
         DealerModel model4 = new DealerModel();
@@ -120,6 +127,8 @@ public class DealerLocationActivity extends BaseActivity implements DealerListAd
         model4.setAddress("Block A 10 Near Railway Road");
         model4.setDistance("600");
         model4.setDistanceUnit("MTR");
+        model4.setContactNo("+91 (0)124-7712800");
+        model4.setEmailAddress("hondadealer@gmail.com");
         dealerList.add(model4);
 
         dealerListAdapter.notifyDataSetChanged();
@@ -282,6 +291,8 @@ public class DealerLocationActivity extends BaseActivity implements DealerListAd
 
     @Override
     public void onItemClick(View view, DealerModel model) {
-
+         Intent intent=new Intent(DealerLocationActivity.this,DealerInfoActivity.class);
+         intent.putExtra("dealerModel", model);
+        startActivity(intent);
     }
 }
