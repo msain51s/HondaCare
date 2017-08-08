@@ -4,12 +4,16 @@ import android.animation.Animator;
 import android.animation.AnimatorInflater;
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v7.app.AlertDialog;
 import android.view.Display;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 import android.view.animation.AccelerateDecelerateInterpolator;
@@ -18,11 +22,22 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 import android.view.animation.TranslateAnimation;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.intellinet.hondatwowheeler.R;
+import com.intellinet.hondatwowheeler.activity.HomeActivity;
+import com.intellinet.hondatwowheeler.activity.SBookingActivity;
+import com.intellinet.hondatwowheeler.adapter.DialogListAdapter;
 import com.intellinet.hondatwowheeler.callback.AnimationType;
 import com.intellinet.hondatwowheeler.callback.FontType;
+import com.intellinet.hondatwowheeler.callback.MenuItem;
+
+import java.util.ArrayList;
+
+import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
 /**
@@ -243,6 +258,85 @@ public class Util {
         }
         view.startAnimation(animation_type);
         view.setVisibility(View.VISIBLE);
+    }
+
+    public static void showListDialog(Context context, final TextView selectedText){
+
+        final ArrayList<String> list=new ArrayList<>();
+        list.add("Free One");
+        list.add("Free Two");
+        list.add("Free Three");
+        list.add("Free Four");
+        list.add("Free Five");
+        list.add("Paid");
+
+        View title_view= LayoutInflater.from(context).inflate(R.layout.custom_title_view, null);
+        TextView title_txt=(TextView) title_view.findViewById(R.id.custom_title_txt);
+        title_txt.setText("Select Service Type");
+
+        View custom_view= LayoutInflater.from(context).inflate(R.layout.dialog_list_prompt, null);
+        ListView listView= (ListView) custom_view.findViewById(R.id.dialog_listview);
+        DialogListAdapter adapter=new DialogListAdapter(context,list,selectedText);
+        listView.setAdapter(adapter);
+
+
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(context);
+        builder.setCancelable(true);
+        builder.setCustomTitle(title_view);
+        builder.setView(custom_view);
+
+        final AlertDialog dialog=builder.create();
+        dialog.show();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                selectedText.setText(list.get(position));
+                Application.selectedServiceTypeGlobal=list.get(position);
+                dialog.dismiss();
+            }
+        });
+
+    }
+
+    public static void showSuccessDialog(final Activity context, String msg)
+    {
+        SweetAlertDialog dialog=new SweetAlertDialog(context,SweetAlertDialog.SUCCESS_TYPE);
+        dialog.setTitleText("Success");
+        dialog.setContentText(msg);
+        dialog.setConfirmText("Home");
+        dialog.setCancelText("Continue");
+        dialog.setCancelable(false);
+        dialog.setCancelClickListener(new SweetAlertDialog.OnSweetClickListener() {
+            @Override
+            public void onClick(SweetAlertDialog sDialog) {
+                sDialog.dismissWithAnimation();
+
+                Application.problemDescriptionGlobal=null;
+                Application.bikeSelectionFlag=false;
+                Application.selectedServiceDateAndTimeGlobal=null;
+                Application.dealerSelectionFlag=false;
+                Application.dealerModelGlobal=null;
+                Application.myBikeModelGlobal=null;
+                Application.selectedServiceTypeGlobal=null;
+context.finish();
+                Intent intent=new Intent(context, SBookingActivity.class);
+                intent.putExtra("ScreenName", "Service Booking");
+                context.startActivity(intent);
+            }
+        });
+        dialog.setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+            @Override
+            public void onClick(SweetAlertDialog sDialog) {
+                sDialog.dismissWithAnimation();
+                Intent intent=new Intent(context, HomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                context.startActivity(intent);
+            }
+        })
+                .show();
+
     }
 
 }

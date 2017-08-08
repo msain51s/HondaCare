@@ -1,10 +1,12 @@
 package com.intellinet.hondatwowheeler.model;
 
+import java.io.Serializable;
+
 /**
  * Created by Chandan Dwivedi on 7/17/2017.
  */
 
-public class MyBike {
+public class MyBike implements Serializable{
 
     int bikeImageUrl;
     String bikeModelName;

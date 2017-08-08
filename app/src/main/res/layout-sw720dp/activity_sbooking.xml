@@ -5,15 +5,359 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_home"
     tools:context="com.intellinet.hondatwowheeler.activity.SBookingActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#33ffffff">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_margin="20dp"
+                android:paddingBottom="25dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/service_booking_view_bg">
+                    <RelativeLayout
+                        android:id="@+id/select_bike_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        >
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="60dp"
+                            android:src="@drawable/add_icon"
+                            android:tint="#808080"
+                            android:layout_centerInParent="true"/>
+                        <TextView
+                            android:id="@+id/select_bike_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select Bike"
+                            android:textSize="22sp"
+                            android:layout_marginTop="15dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:id="@+id/bike_selected_layout"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/bikeImage"
+                            android:layout_width="140dp"
+                            android:layout_height="140dp"
+                            android:layout_margin="15dp"
+                            android:src="@drawable/honda_bike4"/>
+
+                        <RelativeLayout
+                            android:id="@+id/itemTextLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/bikeImage"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginBottom="20dp">
+
+                            <TextView
+                                android:id="@+id/bikeModelName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Honda CD 110 Dream "
+                                android:layout_marginTop="25dp"
+                                android:layout_marginRight="45dp"
+                                android:textSize="22sp"/>
+
+                            <TextView
+                                android:id="@+id/bikeRegNumber"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="HR26AT56267"
+                                android:layout_marginTop="20dp"
+                                android:layout_below="@+id/bikeModelName"
+                                android:textSize="21sp"/>
+
+                            <ImageView
+                                android:id="@+id/editBikeSelection"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/edit_icon"
+                                android:layout_alignParentRight="true"
+                                android:tint="#007AFF"
+                                />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <!--DEALER SELECTION LAYOUT-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/service_booking_view_bg">
+                    <RelativeLayout
+                        android:id="@+id/select_dealer_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="20dp"
+                        >
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_margin="55dp"
+                            android:src="@drawable/add_icon"
+                            android:tint="#808080"
+                            android:layout_centerInParent="true"/>
+                        <TextView
+                            android:id="@+id/select_dealer_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select Dealer"
+                            android:textSize="22sp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"/>
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/dealer_selected_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/editDealerSelection"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/edit_icon"
+                            android:layout_gravity="right"
+                            android:tint="#007AFF"
+                            />
+                        <TextView
+                            android:id="@+id/dealerNameTextview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="22sp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginBottom="20dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginTop="-15dp"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="15dp">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_action_location"/>
+                            <TextView
+                                android:id="@+id/dealerAddressTextview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:textColor="@color/black"
+                                android:textSize="21sp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="15dp">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_action_phone"/>
+                            <TextView
+                                android:id="@+id/dealerContactNoTextview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:textColor="@color/uiColor"
+                                android:textSize="21sp"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/ic_action_mail"/>
+                            <TextView
+                                android:id="@+id/dealerEmailAddressTextview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:textColor="@color/uiColor"
+                                android:textSize="21sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <!--SELECT PREFERED DATE AND TIME LAYOUT-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/service_booking_view_bg"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/select_date_and_time_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp">
+                        <TextView
+                            android:id="@+id/select_booking_date_and_time_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Select Preferred Date and Time"
+                            android:textSize="21sp"
+                            android:layout_centerVertical="true"/>
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_action_clock"/>
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#aaaaaa"/>
+                    <RelativeLayout
+                        android:id="@+id/select_service_type_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp">
+                        <TextView
+                            android:id="@+id/select_service_type_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:hint="Select Service Type"
+                            android:textSize="21sp"
+                            android:layout_centerVertical="true"/>
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/arrow_down1"
+                            android:backgroundTint="#858585"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <!--PROBLEM DESCRIPTION VIEW-->
+
+                <EditText
+                    android:id="@+id/problem_description_editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="20dp"
+                    android:hint="Enter Problem Description"
+                    android:textSize="21sp"
+                    android:gravity="top"
+                    android:padding="12dp"
+                    android:background="@drawable/service_booking_view_bg"
+                    />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Check Click on Activity"
-        android:id="@+id/checkText"
-        android:layout_centerInParent="true" />
+                <!--SUBMIT REQUEST BUTTON LAYOUT-->
 
+                <RelativeLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/button_card_margin_top">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/button_layout_padding"
+                        android:elevation="4dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginBottom="@dimen/button_card_margin_bottom"
+                        android:id="@+id/buttonLayout"
+                        android:layout_gravity="center"
+                        android:background="@drawable/submit_request_btn_bg">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/sendOtpButton"
+                            android:text="Submit Request"
+                            android:textSize="24sp"
+                            android:layout_centerInParent="true"
+                            android:textColor="#ffffff" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="@dimen/button_layout_padding"
+                        android:elevation="4dp"
+                        android:layout_marginBottom="@dimen/button_card_margin_bottom"
+                        android:id="@+id/rotateLayout"
+                        android:layout_centerInParent="true"
+                        android:visibility="invisible"
+                        android:background="@drawable/submit_request_btn_bg">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/regenerate"
+                            android:layout_centerInParent="true"
+                            android:id="@+id/centerIcon" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/colorLayout"
+        android:background="@drawable/submit_request_btn_bg_without_corner_radius"
+        android:visibility="invisible" />
 
 </RelativeLayout>

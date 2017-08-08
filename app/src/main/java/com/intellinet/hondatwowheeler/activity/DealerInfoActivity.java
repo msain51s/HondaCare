@@ -1,12 +1,20 @@
 package com.intellinet.hondatwowheeler.activity;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -17,6 +25,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.intellinet.hondatwowheeler.R;
 import com.intellinet.hondatwowheeler.callback.FontType;
 import com.intellinet.hondatwowheeler.model.DealerModel;
+import com.intellinet.hondatwowheeler.utility.Application;
 import com.intellinet.hondatwowheeler.utility.Util;
 
 public class DealerInfoActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -90,6 +99,29 @@ public class DealerInfoActivity extends AppCompatActivity implements OnMapReadyC
         dealerAddress.setText(model.getAddress());
         dealerContactNo.setText(model.getContactNo());
         dealerEmailAddress.setText(model.getEmailAddress());
+
+        dealerContactNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:"+model.getContactNo()));
+
+                if (ActivityCompat.checkSelfPermission(Application.mContext,
+                        Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    return;
+                }
+                startActivity(callIntent);
+            }
+        });
+
+        dealerEmailAddress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendEmail(new String[]{model.getEmailAddress()});
+            }
+        });
+
+        askPhoneCallPermission();
     }
 
 
@@ -121,6 +153,47 @@ public class DealerInfoActivity extends AppCompatActivity implements OnMapReadyC
      getSupportActionBar().setDisplayHomeAsUpEnabled(true);
  }
 
+
+    public void askPhoneCallPermission(){
+        // Here, thisActivity is the current activity
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            Log.d("Call_Phone", "Permission is not granted, requesting");
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 123);
+
+        } else {
+            Log.d("Call_Phone", "Permission is granted");
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        if (requestCode == 123) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Log.d("Call_phone", "Permission has been granted");
+
+            } else {
+                Log.d("Call_phone", "Permission has been denied or request cancelled");
+            }
+        }
+    }
+
+    protected void sendEmail(String[] to) {
+        Log.i("Send email", "");
+
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+        emailIntent.putExtra(Intent.EXTRA_EMAIL, to);
+        emailIntent.putExtra(Intent.EXTRA_TEXT, "Email message goes here");
+
+        try {
+            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+        } catch (android.content.ActivityNotFoundException ex) {
+            Toast.makeText(Application.mContext, "There is no email client installed.", Toast.LENGTH_SHORT).show();
+        }
+    }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {

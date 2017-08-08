@@ -27,6 +27,7 @@ import com.intellinet.hondatwowheeler.callback.AnimationType;
 import com.intellinet.hondatwowheeler.callback.FontType;
 import com.intellinet.hondatwowheeler.model.DealerModel;
 import com.intellinet.hondatwowheeler.model.MyBike;
+import com.intellinet.hondatwowheeler.utility.Application;
 import com.intellinet.hondatwowheeler.utility.Util;
 
 import java.io.Serializable;
@@ -50,6 +51,7 @@ public class DealerLocationActivity extends BaseActivity implements DealerListAd
     ArrayAdapter<String> adapter;
     AlertDialog myalertDialog;
     int textlength=0;
+    String navigationFrom;
 
     boolean isStateAndCityLayoutShowing=true;
     Typeface roboto_regular,roboto_light;
@@ -83,9 +85,19 @@ public class DealerLocationActivity extends BaseActivity implements DealerListAd
         getIntentData();
         getSupportActionBar().setTitle(activityName);
         titleText.setVisibility(View.GONE);
+
+        Bundle bundle=getIntent().getExtras();
+        if(bundle!=null){
+            navigationFrom=bundle.getString("from");
+        }
     }
 
 
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        navigationFrom=intent.getStringExtra("from");
+    }
 
     public void  getIntentData(){
         Intent intent=getIntent();
@@ -291,8 +303,19 @@ public class DealerLocationActivity extends BaseActivity implements DealerListAd
 
     @Override
     public void onItemClick(View view, DealerModel model) {
-         Intent intent=new Intent(DealerLocationActivity.this,DealerInfoActivity.class);
-         intent.putExtra("dealerModel", model);
-        startActivity(intent);
+
+        if(navigationFrom!=null) {
+            if (navigationFrom.equalsIgnoreCase("ServiceBookingScreen")) {
+                Intent intent = new Intent(DealerLocationActivity.this, SBookingActivity.class);
+                intent.putExtra("model", model);
+                intent.putExtra("from","DealerLocationScreen");
+                Application.dealerModelGlobal=model;
+                startActivity(intent);
+            }
+        }else {
+            Intent intent = new Intent(DealerLocationActivity.this, DealerInfoActivity.class);
+            intent.putExtra("dealerModel", model);
+            startActivity(intent);
+        }
     }
 }

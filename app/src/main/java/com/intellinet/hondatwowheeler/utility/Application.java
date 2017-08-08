@@ -8,6 +8,9 @@ package com.intellinet.hondatwowheeler.utility;
 
 import android.content.Context;
 
+import com.intellinet.hondatwowheeler.model.DealerModel;
+import com.intellinet.hondatwowheeler.model.MyBike;
+
 
 /**
  * Created by Administrator on 11/28/2016.
@@ -19,6 +22,12 @@ public class Application extends android.app.Application {
     public static String selectedAssignToPersonId;
     public static int selectedUserTypeId;
     public static int selectedPropertyTypeId=-1;
+    public static MyBike myBikeModelGlobal;
+    public static DealerModel dealerModelGlobal;
+    public static boolean bikeSelectionFlag,dealerSelectionFlag;
+    public static String selectedServiceDateAndTimeGlobal;
+    public static String selectedServiceTypeGlobal;
+    public static String problemDescriptionGlobal;
 
     public static Application getInstance() {
         return ourInstance;

@@ -17,7 +17,9 @@ import android.view.View;
 import com.intellinet.hondatwowheeler.R;
 import com.intellinet.hondatwowheeler.adapter.MyBikeAdapter;
 import com.intellinet.hondatwowheeler.model.MyBike;
+import com.intellinet.hondatwowheeler.utility.Application;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class MyBikeActivity extends BaseActivity implements MyBikeAdapter.OnItemClickListener{
@@ -27,6 +29,7 @@ public class MyBikeActivity extends BaseActivity implements MyBikeAdapter.OnItem
     ArrayList<MyBike> bikeArrayList=new ArrayList<>();
     LinearLayoutManager linearLayoutManager;
     MyBikeAdapter myBikeAdapter;
+    String navigationFrom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +56,20 @@ public class MyBikeActivity extends BaseActivity implements MyBikeAdapter.OnItem
             }
         });
 
+
+        Bundle bundle=getIntent().getExtras();
+        if(bundle!=null){
+            navigationFrom=bundle.getString("from");
+        }
     }
 
-/*Add Data to List*/
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        navigationFrom=intent.getStringExtra("from");
+    }
+
+    /*Add Data to List*/
     public void initRecycler() {
         MyBike myBike1 = new MyBike(R.drawable.honda_bike2, "Honda CB1000R", "HR26AT4648");
         MyBike myBike2 = new MyBike(R.drawable.honda_bike3, "Honda CBR300R", "RJ46AT4649");
@@ -92,7 +106,16 @@ public class MyBikeActivity extends BaseActivity implements MyBikeAdapter.OnItem
     }
 
     @Override
-    public void onItemClick(View view, MyBike myBike) {}
+    public void onItemClick(View view, MyBike myBike) {
+      if(navigationFrom!=null)
+        if(navigationFrom.equalsIgnoreCase("ServiceBookingScreen")) {
+            Intent intent = new Intent(MyBikeActivity.this, SBookingActivity.class);
+            intent.putExtra("from","MyBikeScreen");
+            intent.putExtra("model", myBike);
+            Application.myBikeModelGlobal=myBike;
+            startActivity(intent);
+        }
+    }
 
 /*Delete Item from list on swipe*/
     private void initSwipe(){

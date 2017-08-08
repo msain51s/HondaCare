@@ -14,6 +14,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.intellinet.hondatwowheeler.R;
@@ -41,6 +42,7 @@ public class BaseActivity extends AppCompatActivity implements DrawerAdapter.OnI
     Handler handler;
     FrameLayout containerLayout;
     TextView titleText;
+    ImageView serviceHistoryIcon;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,8 +54,9 @@ public class BaseActivity extends AppCompatActivity implements DrawerAdapter.OnI
         handler=new Handler();
         containerLayout=(FrameLayout)findViewById(R.id.container);
         titleText=(TextView) findViewById(R.id.titleText);
+        serviceHistoryIcon= (ImageView) findViewById(R.id.serviceHistory);
 
-         slidingRootNav=new SlidingRootNavBuilder(this)
+        slidingRootNav=new SlidingRootNavBuilder(this)
                 .withToolbarMenuToggle(toolbar)
                 .withMenuOpened(false)
                 .withSavedState(savedInstanceState)

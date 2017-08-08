@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="2dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="2dp"
+    app:cardBackgroundColor="@color/white">
+<LinearLayout
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+ <!--BIKE INFO LAYOUT-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/mbItemLayout">
+
+        <ImageView
+            android:id="@+id/bikeImage"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:src="@drawable/honda_bike4"/>
+
+        <RelativeLayout
+            android:id="@+id/itemTextLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/bikeImage"
+            android:layout_marginLeft="12dp">
+
+            <TextView
+                android:id="@+id/bikeModelName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Honda CD 110 Dream "
+                android:layout_marginTop="10dp"
+                android:textSize="20sp"/>
+
+            <TextView
+                android:id="@+id/bikeRegNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HR26AT56267"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/bikeModelName"
+                android:textSize="19sp"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+ <!--DEALER INFO LAYOUT-->
+
+    <TextView
+        android:id="@+id/dealerNameTextview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_margin="12dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_action_location"/>
+        <TextView
+            android:id="@+id/dealerAddressTextview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_action_phone"/>
+        <TextView
+            android:id="@+id/dealerContactNoTextview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/uiColor"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="10dp">
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_action_mail"/>
+        <TextView
+            android:id="@+id/dealerEmailAddressTextview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/uiColor"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+ <!--BOOKING DATE LAYOUT-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        >
+   <TextView
+       android:id="@+id/dateText"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="Date : "
+       android:textColor="@color/black"
+       android:textSize="19sp"/>
+
+        <TextView
+            android:id="@+id/dateTextValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="22 July 2017 : 10:30 AM"
+            android:textSize="18sp"/>
+    </LinearLayout>
+
+    <!--SERVICE TYPE LAYOUT-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"
+        >
+        <TextView
+            android:id="@+id/serviceTypeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Service Type : "
+            android:textColor="@color/black"
+            android:textSize="19sp"/>
+
+        <TextView
+            android:id="@+id/serviceTypeTextValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Free"
+            android:textSize="18sp"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/problemDescriptionText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginBottom="12dp"/>
+
+</LinearLayout>
+</android.support.v7.widget.CardView>

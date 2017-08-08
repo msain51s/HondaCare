@@ -147,6 +147,7 @@ public class HomeActivity extends BaseActivity {
                     public void run() {
                         Intent intent = new Intent(HomeActivity.this, MyBikeActivity.class);
                         intent.putExtra("ScreenName", screenTitles[MenuItem.POS_MY_BIKES]);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                         startActivity(intent);
                     }
                 }, 600);
@@ -177,6 +178,7 @@ public class HomeActivity extends BaseActivity {
                     public void run() {
                         Intent intent = new Intent(HomeActivity.this, DealerLocationActivity.class);
                         intent.putExtra("ScreenName", screenTitles[MenuItem.POS_D_LOCATION]);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                         startActivity(intent);
                     }
                 }, 600);
@@ -205,6 +207,7 @@ public class HomeActivity extends BaseActivity {
                     public void run() {
                         Intent intent = new Intent(HomeActivity.this, SBookingActivity.class);
                         intent.putExtra("ScreenName", screenTitles[MenuItem.POS_SERVICE_BOOKING]);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                         startActivity(intent);
                     }
                 }, 600);

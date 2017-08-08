@@ -34,4 +34,24 @@
         <item name="android:windowExitAnimation">@anim/slide_down_dialog</item>
     </style>
 
+
+
+
+    <style name="DateLabelYear">
+        <item name="android:textSize">@dimen/date_label_year</item>
+        <item name="android:textColor">#e1e1e1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Header Background -->
+    <style name="SwitchDateTime1" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/uiColor</item>
+    </style>
+
+    <!-- Content Background -->
+    <style name="ContentBackground" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:background">@color/uiColor</item>
+    </style>
+
+
 </resources>
