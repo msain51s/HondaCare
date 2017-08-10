@@ -13,7 +13,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.intellinet.hondatwowheeler.R;
@@ -23,6 +26,7 @@ import com.intellinet.hondatwowheeler.menu.DrawerItem;
 import com.intellinet.hondatwowheeler.menu.SimpleItem;
 import com.yarolegovich.slidingrootnav.SlidingRootNav;
 import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
+import com.yarolegovich.slidingrootnav.callback.DragListener;
 
 
 import java.util.Arrays;
@@ -41,6 +45,7 @@ public class BaseActivity extends AppCompatActivity implements DrawerAdapter.OnI
     Handler handler;
     FrameLayout containerLayout;
     TextView titleText;
+    RelativeLayout blurLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,9 +57,27 @@ public class BaseActivity extends AppCompatActivity implements DrawerAdapter.OnI
         handler=new Handler();
         containerLayout=(FrameLayout)findViewById(R.id.container);
         titleText=(TextView) findViewById(R.id.titleText);
+        blurLayout=(RelativeLayout)findViewById(R.id.blurLayout);
 
-         slidingRootNav=new SlidingRootNavBuilder(this)
-                .withToolbarMenuToggle(toolbar)
+        blurLayout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true;
+            }
+        });
+
+        SlidingRootNavBuilder builder=new SlidingRootNavBuilder(this);
+        builder.addDragListener(new DragListener() {
+            @Override
+            public void onDrag(float progress) {
+                if(progress>0){
+                    blurLayout.setVisibility(View.VISIBLE);
+                }else if(progress==0){
+                    blurLayout.setVisibility(View.GONE);
+                }
+            }
+        });
+        slidingRootNav=builder.withToolbarMenuToggle(toolbar)
                 .withMenuOpened(false)
                 .withSavedState(savedInstanceState)
                 .withMenuLayout(R.layout.menu_left_drawer)
@@ -77,7 +100,6 @@ public class BaseActivity extends AppCompatActivity implements DrawerAdapter.OnI
         list.setNestedScrollingEnabled(true);
         list.setLayoutManager(new LinearLayoutManager(this));
         list.setAdapter(adapter);
-
     }
 
     @Override
@@ -179,4 +201,6 @@ public class BaseActivity extends AppCompatActivity implements DrawerAdapter.OnI
     private int color(@ColorRes int res) {
         return ContextCompat.getColor(this, res);
     }
+
+
 }

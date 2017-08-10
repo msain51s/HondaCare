@@ -5,14 +5,181 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#e9e7e7"
     tools:context="com.intellinet.hondatwowheeler.activity.SettingsActivity">
 
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="2dip"
+        app:cardElevation="2dp"
+        android:id="@+id/ncCardView"
+        app:cardBackgroundColor="#ffffff"
+        android:layout_margin="15dp">
+
+        <LinearLayout
+            android:id="@+id/ncLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/nLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingRight="10dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/nTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#333333"
+                android:layout_gravity="center_vertical"
+                android:text="Notification"
+                android:layout_weight="1"
+                android:textSize="16sp"/>
+
+            <android.support.v7.widget.SwitchCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/switchButton"
+                android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c2c1c1"/>
+
+           <LinearLayout
+               android:id="@+id/cLayout"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:padding="10dp"
+               android:clickable="true"
+               android:background="?android:attr/selectableItemBackground"
+               android:orientation="horizontal">
+
+               <TextView
+                   android:id="@+id/cuTextView"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textColor="#333333"
+                   android:layout_gravity="center_vertical"
+                   android:text="Contact Us"
+                   android:layout_weight="1"
+                   android:textSize="16sp"/>
+
+
+               <ImageView
+                   android:layout_width="34dp"
+                   android:layout_height="34dp"
+                   android:id="@+id/cRightArrow"
+                   android:tint="#979696"
+                   android:layout_gravity="center_vertical"
+                   android:src="@drawable/right_arrow"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="2dip"
+        app:cardElevation="2dp"
+        android:layout_below="@+id/ncCardView"
+        android:id="@+id/prCardView"
+        app:cardBackgroundColor="#ffffff"
+        android:layout_margin="15dp">
+
+        <LinearLayout
+            android:id="@+id/prLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/pLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/pTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333333"
+                    android:layout_gravity="center_vertical"
+                    android:text="Privacy Policy"
+                    android:layout_weight="1"
+                    android:textSize="16sp"/>
+
+
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:id="@+id/pRightArrow"
+                    android:tint="#979696"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/right_arrow"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#c2c1c1"/>
+
+            <LinearLayout
+                android:id="@+id/rLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:clickable="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/rateTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333333"
+                    android:layout_gravity="center_vertical"
+                    android:text="Rate This App"
+                    android:layout_weight="1"
+                    android:textSize="16sp"/>
+
+
+                <ImageView
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:id="@+id/rRightArrow"
+                    android:tint="#979696"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/right_arrow"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 
     <TextView
+        android:id="@+id/vTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Check Click on Activity"
-        android:id="@+id/checkText"
-        android:layout_centerInParent="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/prCardView"
+        android:text="Version 1.0"
+        android:textSize="16sp"/>
 
 </RelativeLayout>

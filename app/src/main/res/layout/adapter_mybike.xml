@@ -41,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:text="Honda CD 110 Dream "
                     android:layout_marginTop="5dp"
-                    android:textSize="18sp"/>
+                    android:textSize="17sp"/>
 
                 <TextView
                     android:id="@+id/bikeRegNumber"
@@ -50,7 +50,7 @@
                     android:text="HR26AT56267"
                     android:layout_marginTop="20dp"
                     android:layout_below="@+id/bikeModelName"
-                    android:textSize="17sp"/>
+                    android:textSize="16sp"/>
 
                 </RelativeLayout>
         </RelativeLayout>

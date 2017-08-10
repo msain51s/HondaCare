@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.intellinet.hondatwowheeler.activity.FeedbackActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <ImageView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Check Click on Activity"
-        android:id="@+id/checkText"
-        android:layout_centerInParent="true" />
+        android:id="@+id/bannerImage"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/fBannerImage"
+        android:src="@drawable/feedback_honda_img"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bannerImage">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/feedback_recycler"
+            android:scrollbars="none"
+            android:paddingTop="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>

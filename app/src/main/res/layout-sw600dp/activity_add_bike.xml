@@ -97,16 +97,29 @@
                         android:backgroundTint="#80ffffff"/>
 
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/vInfoIcon"
-                            android:layout_below="@+id/regNumberEditText"
-                            android:layout_alignParentRight="true"
-                            android:src="@drawable/info_icon"
-                            android:layout_marginTop="@dimen/info_margin"
-                            android:padding="4dp"
-                            android:layout_gravity="center_vertical"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/vInfoIcon"
+                        android:layout_below="@+id/regNumberEditText"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/info_icon"
+                        android:layout_marginTop="@dimen/info_margin"
+                        android:padding="4dp"
+                        android:layout_gravity="center_vertical"/>
+
+                    <ImageView
+                        android:layout_width="1dp"
+                        android:layout_height="1dp"
+                        android:id="@+id/infoIcon"
+                        android:layout_below="@+id/regNumberEditText"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/info_icon"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="16dp"
+                        android:padding="4dp"
+                        android:transitionName="vin"
+                        android:layout_gravity="center_vertical"/>
 
 
                     <TextView

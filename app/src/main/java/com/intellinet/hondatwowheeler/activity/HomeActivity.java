@@ -13,6 +13,7 @@ import android.media.MediaPlayer;
 import android.os.Handler;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
@@ -67,6 +68,8 @@ public class HomeActivity extends BaseActivity {
     boolean willDraw=false;
 
     MediaPlayer mediaPlayer;
+
+
 
 
     @Override
@@ -134,7 +137,10 @@ public class HomeActivity extends BaseActivity {
         slidingRootNav.setMenuLocked(true);
         rootLayout.addView(new MenuCircle(HomeActivity.this));
 
+
     }
+
+
 
     /*Navigation on Circle Menu*/
     private void circleMenuNavigation(){
@@ -150,7 +156,6 @@ public class HomeActivity extends BaseActivity {
                         startActivity(intent);
                     }
                 }, 600);
-
             }
         });
 

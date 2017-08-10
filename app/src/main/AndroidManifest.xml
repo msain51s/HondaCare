@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.intellinet.hondatwowheeler">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
     <application
         android:name=".utility.Application"
         android:allowBackup="true"
@@ -12,9 +15,7 @@
         android:theme="@style/AppTheme.NoActionBar">
         <activity
             android:name=".activity.SplashActivity"
-            android:screenOrientation="portrait">
-
-        </activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.RegisterActivity"
             android:screenOrientation="portrait"
@@ -55,11 +56,17 @@
             android:launchMode="singleTask" />
         <activity
             android:name=".activity.SettingsActivity"
-            android:launchMode="singleTask"></activity>
+            android:launchMode="singleTask" />
         <activity
             android:name=".activity.AddBikeActivity"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activity.FeedbackDetailActivity" />
+        <activity android:name=".activity.NotificationDetailActivity" />
+        <activity
+            android:name=".activity.MyDialogActivity"
+            android:theme="@style/MDialogTheme"></activity>
+        <activity android:name=".activity.ContactUsActivity"></activity>
+        <activity android:name=".activity.PolicyActivity"></activity>
     </application>
 
 </manifest>

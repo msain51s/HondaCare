@@ -3,4 +3,8 @@
 
     <string name="menu_img">Menu Image</string>
     <string name="title_activity_demo">DemoActivity</string>
+    <string name="fBannerImage">feedback banner image</string>
+    <string name="fTypeImage">Feedback Type Image</string>
+    <string name="feedbackImage">Feedback Mood Icon</string>
+    <string name="call">1800 103 3434 (Toll Free) Timing: 8 AM to 9 PM</string>
 </resources>

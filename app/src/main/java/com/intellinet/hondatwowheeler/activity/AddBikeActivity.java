@@ -3,6 +3,9 @@ package com.intellinet.hondatwowheeler.activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Point;
+import android.os.Build;
+import android.support.v4.app.ActivityOptionsCompat;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -27,7 +30,7 @@ public class AddBikeActivity extends AppCompatActivity {
     Toolbar toolbar;
     EditText regNumberEditText, vinEditText;
     TextView submitButton;
-    ImageView vInfoIcon, vInfoImage;
+    ImageView vInfoIcon, infoIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class AddBikeActivity extends AppCompatActivity {
         vinEditText=(EditText)findViewById(R.id.vinEditText);
         submitButton=(TextView)findViewById(R.id.submitButton);
         vInfoIcon=(ImageView)findViewById(R.id.vInfoIcon);
+        infoIcon=(ImageView)findViewById(R.id.infoIcon);
 
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +57,15 @@ public class AddBikeActivity extends AppCompatActivity {
         vInfoIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               getVInfoImage();
+                if(Build.VERSION.SDK_INT>=Build.VERSION_CODES.LOLLIPOP){
+                    Intent intent = new Intent(AddBikeActivity.this, MyDialogActivity.class);
+                    ActivityOptionsCompat options = ActivityOptionsCompat.
+                            makeSceneTransitionAnimation(AddBikeActivity.this,
+                                    infoIcon, "vin");
+                    startActivity(intent, options.toBundle());
+                }else{
+                    getVInfoImage();
+                }
             }
         });
 

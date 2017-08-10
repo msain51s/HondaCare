@@ -33,4 +33,5 @@ dependencies {
     compile 'com.uniquestudio:checkbox:1.0.10'
     compile 'com.yarolegovich:sliding-root-nav:1.0.2'
     testCompile 'junit:junit:4.12'
+    compile 'ca.barrenechea.header-decor:header-decor:0.2.8@aar'
 }
