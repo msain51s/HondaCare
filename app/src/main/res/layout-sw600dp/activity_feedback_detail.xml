@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.intellinet.hondatwowheeler.activity.FeedbackDetailActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#d90000"
+            android:elevation="4dp"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <TextView
+                android:id="@+id/titleText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sales Feedback"
+                android:textSize="21sp"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center|center_vertical"/>
+
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/feedbackDetailLayout"
+        android:layout_below="@+id/appBarLayout"
+        android:layout_above="@+id/remarkLayout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:id="@+id/visitType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/fdetail_background"
+            android:layout_marginBottom="8dp"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vCaptionText"
+                android:text="How was your visit"
+                android:textSize="21sp"
+                android:textColor="#6c6b6b"
+                android:layout_gravity="center_horizontal"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:weightSum="100">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sadItemLayout"
+                    android:layout_weight="33">
+
+                    <ImageView
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:id="@+id/sadImage"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/unselected_sad_icon"
+                        android:contentDescription="@string/feedbackImage"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sad"
+                        android:textSize="21sp"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/sadText"
+                        android:textColor="#6c6b6b"
+                        android:layout_below="@+id/sadImage"
+                        android:layout_centerHorizontal="true" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/okItemLayout"
+                    android:layout_weight="34">
+
+                    <ImageView
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:id="@+id/okImage"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/unselected_ok_icon"
+                        android:contentDescription="@string/feedbackImage"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/okImage"
+                        android:text="OK"
+                        android:layout_marginTop="5dp"
+                        android:textSize="21sp"
+                        android:textColor="#6c6b6b"
+                        android:id="@+id/okText"
+                        android:layout_centerHorizontal="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/happyItemLayout"
+                    android:layout_weight="33">
+
+                    <ImageView
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:id="@+id/happyImage"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/unselected_good_icon"
+                        android:contentDescription="@string/feedbackImage"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/happyImage"
+                        android:text="Happy"
+                        android:textSize="21sp"
+                        android:textColor="#6c6b6b"
+                        android:layout_marginTop="5dp"
+                        android:id="@+id/happyText"
+                        android:layout_centerHorizontal="true"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/visitType"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="8dp"
+            android:padding="20dp"
+            android:id="@+id/findLayout"
+            android:background="@drawable/fdetail_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/fCaptionText"
+                android:text="How did you find our...  ?"
+                android:textSize="21sp"
+                android:textColor="#6c6b6b"
+                android:layout_centerHorizontal="true" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/fDetail_recycler"
+                android:scrollbars="none"
+                android:layout_below="@+id/fCaptionText"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/remarkLayout"
+        android:layout_marginTop="7dp"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:id="@+id/remarkEditText"
+            android:hint="Enter Remarks"
+            android:padding="10dp"
+            android:textSize="21sp"
+            android:gravity="top|left"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/remark_background"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Feedback"
+            android:layout_marginTop="8dp"
+            android:textSize="21sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="#1aba5d"
+            android:layout_below="@+id/remarkEditText"
+            android:id="@+id/saveButton" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

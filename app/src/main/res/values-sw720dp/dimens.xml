@@ -98,4 +98,8 @@
     <!--Add Bike-->
     <dimen name="info_margin">15dp</dimen>
 
+   <!--feedback-->
+    <dimen name="item_height">115dp</dimen>
+
+
 </resources>
